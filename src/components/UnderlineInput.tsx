@@ -26,7 +26,7 @@ const UnderlineInput: React.FC<UnderlineInputProps> = ({
       />
       <div
         className="absolute bottom-0 left-2 w-full h-[1px] transform origin-left scale-x-0 transition-transform duration-300 ease-in-out group-focus-within:scale-x-100"
-        style={{ backgroundColor: token.colorPrimary }}
+        style={{ backgroundColor: token.colorBorder }}
       />
     </div>
   );

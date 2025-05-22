@@ -1,35 +1,45 @@
-import React from 'react';
-import { Breadcrumb, Layout, theme } from 'antd';
+import React, { useRef, useEffect, useState } from 'react';
+import { Layout } from 'antd';
 import DesignHeader from '@/pages/design/header';
-const { Content, Footer } = Layout;
+import Toolbar from '@/pages/design/content/DesignToolbar';
+import DesignContent from '@/pages/design/content/DesignContent';
+import Preview from '@/pages/design/content/DesignPreview';
+
+const { Content } = Layout;
 
 const Design: React.FC = () => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [headerHeight, setHeaderHeight] = useState(64);
+
+  useEffect(() => {
+    if (!headerRef.current) return;
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        setHeaderHeight(entry.contentRect.height);
+      }
+    });
+
+    resizeObserver.observe(headerRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
 
   return (
     <Layout>
-      <DesignHeader />
-      <Content style={{ padding: '0 48px' }}>
-        <Breadcrumb
-          style={{ margin: '16px 0' }}
-          items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}
-        />
-        <div
-          style={{
-            padding: 24,
-            minHeight: 380,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
-          Content
-        </div>
+      <DesignHeader ref={headerRef} height={headerHeight} />
+      <Content
+        style={{
+          height: `calc(100vh - ${headerHeight}px)`,
+        }}
+        className="flex"
+      >
+        <Toolbar />
+        <DesignContent />
+        <Preview />
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©{new Date().getFullYear()} Created by Ant UED
-      </Footer>
     </Layout>
   );
 };
