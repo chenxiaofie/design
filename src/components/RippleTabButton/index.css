@@ -1,0 +1,17 @@
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1); /* 点击扩散的颜色，可调整 */
+    transform: scale(0);
+    animation: ripple-effect 600ms linear;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  @keyframes ripple-effect {
+    to {
+      transform: scale(4); /* 控制扩散范围 */
+      opacity: 0;
+    }
+  }
+  

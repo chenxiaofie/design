@@ -7,16 +7,18 @@ import {
 import { theme, Button } from 'antd';
 import { useState } from 'react';
 import IconFont from '@/components/IconFont';
-
+import { useTranslation } from 'react-i18next';
 const OperationBar: React.FC = () => {
   const [activeButtons, setActiveButtons] = useState<{
     [key: string]: boolean;
   }>({});
+  const { t } = useTranslation('design/header/OperationBar');
+
   const list = [
-    { name: '设计', icon: <FolderOutlined /> },
-    { name: 'UNDO', icon: <UndoOutlined /> },
-    { name: 'REDO', icon: <RedoOutlined /> },
-    { name: '帮助', icon: <QuestionCircleOutlined /> },
+    { name: t('design'), icon: <FolderOutlined /> },
+    { name: t('undo'), icon: <UndoOutlined /> },
+    { name: t('redo'), icon: <RedoOutlined /> },
+    { name: t('help'), icon: <QuestionCircleOutlined /> },
   ];
   const buttons = [
     {

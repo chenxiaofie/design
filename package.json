@@ -7,15 +7,20 @@
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "i18n:extract": "i18next --config i18next-parser.config.cjs "
   },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
     "@tailwindcss/vite": "^4.1.7",
     "antd": "^5.25.2",
+    "i18next": "^25.2.0",
+    "i18next-browser-languagedetector": "^8.1.0",
+    "i18next-http-backend": "^3.0.2",
     "prettier": "^3.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.5.1",
     "react-router-dom": "^7.6.0",
     "zustand": "^5.0.5"
   },
@@ -29,6 +34,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "i18next-parser": "^9.3.0",
+    "i18next-scanner": "^4.6.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.7",
     "typescript": "~5.8.3",
