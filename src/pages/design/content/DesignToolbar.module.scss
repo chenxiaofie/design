@@ -1,25 +1,18 @@
 .noBg {
   background-color: transparent !important;
-  // color:red;
+
   :global(.icons) {
-    color: var(--icons-color);
+    color: var(--icons-color, #000000ef);
+    transition: color 1s ease;
   }
+
   :global(.label) {
-    color: var(--label-color);
+    color: var(--label-color, #000000ef);
+    transition: color 1s ease;
   }
 }
 
-.animateColor {
-  animation: colorChange 0.3s forwards;
-}
-
-@keyframes colorChange {
-  from {
-    --icons-color: transparent;
-    --label-color: transparent;
-  }
-  to {
-    --icons-color: var(--ant-primary-color);
-    --label-color: var(--ant-primary-color);
-  }
+.activeSubTab {
+  --icons-color: #1677ff; /* token.colorPrimary */
+  --label-color: #1677ff;
 }

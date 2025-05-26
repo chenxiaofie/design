@@ -4,10 +4,12 @@ import { useState } from 'react';
 import RippleTabButton from '@/components/RippleTabButton';
 import ProductComponent from '@/pages/design/content/components/designToolbar/ProductComponent';
 import styles from '@/pages/design/content/DesignToolbar.module.scss';
+
 const Toolbar = () => {
   const { token } = theme.useToken();
   const [activeTab, setActiveTab] = useState('1');
   const [activeSubTab, setActiveSubTab] = useState('2-1');
+
   const tabs = [
     {
       key: '1',
@@ -45,7 +47,6 @@ const Toolbar = () => {
       <div className="flex-1 bg-white border-t border-gray-300">
         {tabs.map((item) => {
           if (item.key === activeTab) {
-            // 如果有子标签，可以在这里处理子标签的逻辑
             if (item.tabs) {
               return (
                 <div
@@ -56,13 +57,7 @@ const Toolbar = () => {
                   {item.tabs.map((tab) => (
                     <div
                       key={tab.key}
-                      className={`${activeSubTab === tab.key ? styles.noBg : ''} ${
-                        activeSubTab === tab.key ? styles.animateColor : ''
-                      }`}
-                      style={{
-                        ['--icons-color' as string]: 'red',
-                        ['--label-color' as string]: 'transparent',
-                      }}
+                      className={`${styles.noBg} ${activeSubTab === tab.key ? styles.activeSubTab : ''}`}
                     >
                       <RippleTabButton
                         label={tab.label}
