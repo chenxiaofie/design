@@ -1,0 +1,11 @@
+.tabButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.2s;
+  background-color: var(--tab-bg);
+  color: var(--tab-color);
+}
