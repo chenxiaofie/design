@@ -3,16 +3,36 @@ import {
   UndoOutlined,
   RedoOutlined,
   QuestionCircleOutlined,
+  GlobalOutlined,
 } from '@ant-design/icons';
-import { theme, Button } from 'antd';
+import { theme, Button, Dropdown } from 'antd';
+import type { MenuProps } from 'antd';
 import { useState } from 'react';
 import IconFont from '@/components/IconFont';
 import { useTranslation } from 'react-i18next';
+
 const OperationBar: React.FC = () => {
   const [activeButtons, setActiveButtons] = useState<{
     [key: string]: boolean;
   }>({});
-  const { t } = useTranslation('design/header/OperationBar');
+  const { t, i18n } = useTranslation('design/header/OperationBar');
+
+  const handleLanguageChange = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const languageItems: MenuProps['items'] = [
+    {
+      key: 'zh-CN',
+      label: '中文',
+      onClick: () => handleLanguageChange('zh-CN'),
+    },
+    {
+      key: 'en',
+      label: 'English',
+      onClick: () => handleLanguageChange('en'),
+    },
+  ];
 
   const list = [
     { name: t('design'), icon: <FolderOutlined /> },
@@ -37,6 +57,12 @@ const OperationBar: React.FC = () => {
     {
       key: 'preview',
       icon: <IconFont type="icon-yulan1" style={{ fontSize: '16px' }} />,
+    },
+    {
+      key: 'language',
+      icon: <GlobalOutlined />,
+      dropdown: true,
+      dropdownItems: languageItems,
     },
   ];
   const { token } = theme.useToken();
@@ -65,15 +91,32 @@ const OperationBar: React.FC = () => {
         ))}
       </div>
       <div className="flex items-center space-x-2">
-        {buttons.map((button) => (
-          <Button
-            key={button.key}
-            type={activeButtons[button.key] ? 'primary' : 'default'}
-            icon={button.icon}
-            className="hover:bg-primary hover:text-white"
-            onClick={() => handleButtonClick(button.key)}
-          />
-        ))}
+        {buttons.map((button) => {
+          if (button.dropdown) {
+            return (
+              <Dropdown
+                key={button.key}
+                menu={{ items: button.dropdownItems }}
+                placement="bottomRight"
+              >
+                <Button
+                  type={activeButtons[button.key] ? 'primary' : 'default'}
+                  icon={button.icon}
+                  className="hover:bg-primary hover:text-white"
+                />
+              </Dropdown>
+            );
+          }
+          return (
+            <Button
+              key={button.key}
+              type={activeButtons[button.key] ? 'primary' : 'default'}
+              icon={button.icon}
+              className="hover:bg-primary hover:text-white"
+              onClick={() => handleButtonClick(button.key)}
+            />
+          );
+        })}
       </div>
     </div>
   );

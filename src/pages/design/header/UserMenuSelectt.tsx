@@ -11,7 +11,6 @@ const UserMenuSelectt: React.FC = () => {
 
   useEffect(() => {
     const updateWidth = () => {
-      console.log('updateWidth', menuRef.current?.offsetWidth);
       if (menuRef.current) {
         setUserMenuWidth(menuRef.current.offsetWidth);
       }

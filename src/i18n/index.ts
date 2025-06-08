@@ -9,9 +9,9 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'zh-CN',
-    defaultNS: 'common', // 你可以保留默认命名空间
+    defaultNS: 'common', 
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json', // 按需加载指定命名空间的文件
+      loadPath: '/locales/{{lng}}/{{ns}}.json', 
     },
     interpolation: {
       escapeValue: false,
