@@ -61,8 +61,9 @@ const Preview = () => {
         width: userMenuWidth + 33 + 'px',
         borderLeft: `1px solid ${token.colorBorder}`,
       }}
-      className="flex flex-col h-full"
+      className="flex flex-col h-full bg-white"
     >
+      <div className='w-full h-[1px] border-t border-gray-200'></div>
       <div className="p-4">
         {selectedProduct ? (
           <Card
@@ -97,7 +98,7 @@ const Preview = () => {
             />
           </Card>
         ) : (
-          <div className="flex items-center justify-center h-full text-gray-400">
+          <div className="flex items-center justify-center h-full text-gray-400 ">
             {t('Select a product to preview')}
           </div>
         )}
