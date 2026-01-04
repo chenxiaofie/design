@@ -1,176 +1,178 @@
-# Design Studio - 专业设计工具
+# Design Studio - Professional Design Tool
 
-一个现代化的在线设计工具，提供直观的界面和强大的功能，帮助设计师和创作者轻松创建精美的设计作品。
+A modern online design tool that provides an intuitive interface and powerful features to help designers and creators easily create stunning designs.
 
-## ✨ 主要功能
+## ✨ Key Features
 
-### 🎨 设计工具
+### 🎨 Design Tools
 
-- **无限缩放画布** - 支持从概览到细节的精确设计
-- **智能标尺系统** - 精确的坐标定位和网格对齐
-- **拖拽式操作** - 直观的图形编辑和布局调整
-- **实时预览** - 即时查看设计效果
+* **Infinite Zoom Canvas** - Supports precise design from overview to details
+* **Smart Ruler System** - Accurate coordinate positioning and grid alignment
+* **Drag-and-Drop Operation** - Intuitive graphic editing and layout adjustment
+* **Real-time Preview** - Instantly view design effects
 
-### 🛠️ 工具栏
+### 🛠️ Toolbar
 
-- **商品管理** - 快速添加和管理设计素材
-- **图片编辑** - 支持多种图片格式和编辑功能
-- **文字工具** - 丰富的字体和样式选项
-- **颜色管理** - 专业的色彩选择和搭配
-- **素材上传** - 便捷的文件上传和管理
+* **Asset Management** - Quickly add and manage design assets
+* **Image Editing** - Supports various image formats and editing features
+* **Text Tools** - Rich font and style options
+* **Color Management** - Professional color selection and matching
+* **Asset Upload** - Convenient file upload and management
 
-### 🌐 国际化支持
+### 🌐 Internationalization Support
 
-- **多语言界面** - 支持中文和英文
-- **本地化体验** - 根据用户偏好自动切换语言
+* **Multi-language Interface** - Supports Chinese and English
+* **Localized Experience** - Automatically switches language based on user preferences
 
-## 🚀 技术栈
+## 🚀 Tech Stack
 
-### 前端框架
+### Frontend Framework
 
-- **React 18** - 现代化的用户界面构建
-- **TypeScript** - 类型安全的开发体验
-- **Vite** - 快速的开发构建工具
+* **React 18** - Modern user interface building
+* **TypeScript** - Type-safe development experience
+* **Vite** - Fast development build tool
 
-### UI 组件
+### UI Components
 
-- **Ant Design** - 企业级 UI 组件库
-- **Tailwind CSS** - 原子化 CSS 框架
-- **Fabric.js** - 强大的 Canvas 操作库
+* **Ant Design** - Enterprise-level UI component library
+* **Tailwind CSS** - Atomic CSS framework
+* **Fabric.js** - Powerful canvas manipulation library
 
-### 状态管理
+### State Management
 
-- **Zustand** - 轻量级状态管理
-- **React Hooks** - 函数式组件状态管理
+* **Zustand** - Lightweight state management
+* **React Hooks** - Functional component state management
 
-### 国际化
+### Internationalization
 
-- **i18next** - 专业的国际化解决方案
-- **react-i18next** - React 国际化集成
+* **i18next** - Professional internationalization solution
+* **react-i18next** - React integration for internationalization
 
-## 📦 安装和运行
+## 📦 Installation & Running
 
-### 环境要求
+### Environment Requirements
 
-- Node.js >= 16.0.0
-- pnpm >= 7.0.0
+* Node.js >= 16.0.0
+* pnpm >= 7.0.0
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 pnpm install
 ```
 
-### 开发模式
+### Development Mode
 
 ```bash
 pnpm dev
 ```
 
-### 构建生产版本
+### Build Production Version
 
 ```bash
 pnpm build
 ```
 
-### 代码检查
+### Code Linting
 
 ```bash
 pnpm lint
 ```
 
-## 🏗️ 项目结构
+## 🏗️ Project Structure
 
 ```
 design/
-├── public/                 # 静态资源
-│   └── locales/           # 国际化文件
+├── public/                 # Static assets
+│   └── locales/           # Internationalization files
 ├── src/
-│   ├── components/        # 通用组件
-│   │   ├── Ruler.tsx     # 智能标尺组件
-│   │   ├── IconFont.tsx  # 图标组件
+│   ├── components/        # Reusable components
+│   │   ├── Ruler.tsx     # Smart ruler component
+│   │   ├── IconFont.tsx  # Icon component
 │   │   └── ...
-│   ├── pages/            # 页面组件
-│   │   └── design/       # 设计页面
-│   ├── hooks/            # 自定义 Hooks
-│   ├── stores/           # 状态管理
-│   └── i18n/            # 国际化配置
+│   ├── pages/            # Page components
+│   │   └── design/       # Design page
+│   ├── hooks/            # Custom hooks
+│   ├── stores/           # State management
+│   └── i18n/            # Internationalization configuration
 ├── package.json
 └── README.md
 ```
 
-## 🎯 核心特性
+## 🎯 Core Features
 
-### 智能标尺系统
+### Smart Ruler System
 
-- **无限缩放支持** - 从 0.1x 到 10x 的平滑缩放
-- **动态步长计算** - 根据缩放级别自动调整刻度密度
-- **精确坐标对齐** - 使用智能算法确保刻度位置准确
-- **多级刻度显示** - 主刻度、次刻度和微刻度的层次化显示
+* **Infinite Zoom Support** - Smooth zooming from 0.1x to 10x
+* **Dynamic Step Calculation** - Adjusts scale density based on zoom level
+* **Precise Coordinate Alignment** - Uses intelligent algorithms to ensure accurate scale placement
+* **Multi-level Scale Display** - Hierarchical display of main, secondary, and micro scales
 
-### 画布操作
+### Canvas Operations
 
-- **流畅的缩放体验** - 鼠标滚轮直接缩放，无需修饰键
-- **精确的拖拽控制** - 支持图形元素的精确移动和调整
-- **实时坐标反馈** - 实时显示鼠标位置和选择状态
+* **Smooth Zooming** - Zoom in and out with mouse wheel, no modifier key required
+* **Precise Drag-and-Drop Control** - Supports precise movement and adjustment of graphic elements
+* **Real-time Coordinate Feedback** - Displays mouse position and selection status in real-time
 
-### 响应式设计
+### Responsive Design
 
-- **自适应布局** - 支持不同屏幕尺寸的完美适配
-- **组件化架构** - 模块化的组件设计，易于维护和扩展
+* **Adaptive Layouts** - Perfect fit for various screen sizes
+* **Componentized Architecture** - Modular component design for easy maintenance and extension
 
-## 🔧 开发指南
+## 🔧 Development Guide
 
-### 添加新组件
+### Adding a New Component
 
-1. 在 `src/components/` 目录下创建组件文件
-2. 使用 TypeScript 定义接口和类型
-3. 遵循项目的代码规范和命名约定
+1. Create a component file in the `src/components/` directory
+2. Define interfaces and types using TypeScript
+3. Follow the project's coding standards and naming conventions
 
-### 国际化配置
+### Internationalization Setup
 
-1. 在 `public/locales/` 目录下添加翻译文件
-2. 使用 `useTranslation` Hook 进行文本翻译
-3. 支持嵌套的命名空间结构
+1. Add translation files in the `public/locales/` directory
+2. Use the `useTranslation` hook for text translation
+3. Support nested namespace structures
 
-### 状态管理
+### State Management
 
-1. 使用 Zustand 进行全局状态管理
-2. 在 `src/stores/` 目录下定义状态逻辑
-3. 使用 React Hooks 进行组件状态管理
+1. Use Zustand for global state management
+2. Define state logic in the `src/stores/` directory
+3. Use React Hooks for component-level state management
 
-## 🎨 设计系统
+## 🎨 Design System
 
-### 颜色主题
+### Color Theme
 
-- 基于 Ant Design 的设计令牌
-- 支持主题切换和自定义
-- 统一的色彩管理系统
+* Based on Ant Design design tokens
+* Supports theme switching and customization
+* Unified color management system
 
-### 组件规范
+### Component Guidelines
 
-- 一致的视觉风格
-- 可复用的组件设计
-- 响应式的交互体验
+* Consistent visual style
+* Reusable component designs
+* Responsive interactive experience
 
-## 📝 贡献指南
+## 📝 Contribution Guidelines
 
-1. Fork 项目仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 创建 Pull Request
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
 
-## 📄 许可证
+## 📄 License
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 联系我们
+## 🤝 Contact Us
 
-- 项目主页：[https://github.com/chenxiaofie/design](https://github.com/chenxiaofie/design)
-- 问题反馈：[Issues](https://github.com/chenxiaofie/design/issues)
-- 功能建议：[Discussions](https://github.com/chenxiaofie/design/discussions)
+* Project homepage: [https://github.com/chenxiaofie/design](https://github.com/chenxiaofie/design)
+* Report issues: [Issues](https://github.com/chenxiaofie/design/issues)
+* Suggest features: [Discussions](https://github.com/chenxiaofie/design/discussions)
 
 ---
 
-**Design Studio** - 让设计更简单，让创意更自由 ✨
+**Design Studio** - Making design simpler, and creativity freer ✨
+
+---
